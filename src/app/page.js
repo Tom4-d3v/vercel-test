@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Image from 'next/image'; // Importation du composant Image de Next.js
 
 export default function Home() {
   const [users, setUsers] = useState([]);
@@ -22,6 +23,15 @@ export default function Home() {
   return (
     <div>
       <h1>Liste des utilisateurs</h1>
+
+      {/* Affichage de l'image locale */}
+      <Image 
+        src="/images/mon-image.jpg" // Le chemin de l'image dans le dossier public
+        alt="Image locale" // Description de l'image
+        width={500} // Largeur de l'image
+        height={300} // Hauteur de l'image
+      />
+
       {loading ? (
         <p>Chargement...</p>
       ) : (
